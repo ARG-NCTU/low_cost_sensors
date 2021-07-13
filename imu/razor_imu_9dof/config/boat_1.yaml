@@ -1,0 +1,34 @@
+## USB port
+port: /dev/sensor_imu
+
+
+##### Calibration ####
+### accelerometer
+accel_x_min: -255.37
+accel_x_max: 249.88
+accel_y_min: -250.98
+accel_y_max: 255.98
+accel_z_min: -263.18
+accel_z_max: 256.23
+
+### magnetometer
+# standard calibration
+magn_x_min: -600.0
+magn_x_max: 600.0
+magn_y_min: -600.0
+magn_y_max: 600.0
+magn_z_min: -600.0
+magn_z_max: 600.0
+
+# extended calibration
+calibration_magn_use_extended: false
+magn_ellipsoid_center: [-9.97185, 183.362, 85.5346]
+magn_ellipsoid_transform: [[0.963415, -0.000947749, 0.0146645], [-0.000947749, 0.957616, -0.0145765], [0.0146645, -0.0145765, 0.988841]]
+
+# AHRS to robot calibration
+imu_yaw_calibration: 0.0
+
+### gyroscope
+gyro_average_offset_x: -0.02
+gyro_average_offset_y: 0.01
+gyro_average_offset_z: -0.03
