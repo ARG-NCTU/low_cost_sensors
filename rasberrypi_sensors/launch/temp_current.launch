@@ -1,16 +1,20 @@
 <launch>
-	<arg name="pkg_name" default="rasberrypi_sensors" />
-	<!--<arg name="node_name" default="temp_current_8A_node" /-->
+	<arg name="veh" default="boat1" />
+    <group ns="$(arg veh)">
 
-	<node pkg="$(arg pkg_name)" type="temperature_node.py" name="Temperature_node" output="screen">
-	</node>
+		<arg name="pkg_name" default="rasberrypi_sensors" />
+		<!--<arg name="node_name" default="temp_current_8A_node" /-->
 
-	<node pkg="$(arg pkg_name)" type="cpu_clock.py" name="cpu_clock" output="screen">
-        </node>
+		<node pkg="$(arg pkg_name)" type="temperature_node.py" name="Temperature_node" output="screen">
+		</node>
 
-	<node pkg="$(arg pkg_name)" type="current_8A_node.py" name="current_8A_node_0" output="screen">
-                <param name="addr" value="A4"/>
-        </node>
-	
+		<node pkg="$(arg pkg_name)" type="cpu_clock.py" name="cpu_clock" output="screen">
+			</node>
+
+		<node pkg="$(arg pkg_name)" type="current_8A_node.py" name="current_8A_node_0" output="screen">
+					<param name="addr" value="A4"/>
+		</node>
+
+	</group>		
  
 </launch>
